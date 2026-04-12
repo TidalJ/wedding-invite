@@ -23,9 +23,9 @@ export const copy = {
       title: "Our story",
       lead: "Every love story is beautiful — this one is ours.",
       p1:
-        "We met in the middle of ordinary days that suddenly felt brighter. What started as easy laughter and long conversations became a partnership built on trust, patience, and a shared sense of home.",
+        "We met on ordinary days, and lit each other's world. From easy laughter and long conversation, we built on trust, patience, and a shared sense of home.",
       p2:
-        "Now we are choosing each other for always — and we would be honored to celebrate with the people who have cheered us on, carried us through, and made our world kinder along the way.",
+        "We choose forever, and on this joyful day, we are grateful to celebrate with you - who walked with us, cheered us on, carried us through along the way.",
     },
     countdown: {
       title: "The countdown",

@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --font-serif: ui-serif, "New York", "Iowan Old Style", "Apple Garamond",
+    Baskerville, "Times New Roman", serif;
+
+  --color-ink: #0a0a0b;
+  --color-mist: #f5f3ef;
+  --color-paper: #faf9f6;
+  --color-stone: #8a8680;
+  --color-gold: #c4a574;
+  --color-gold-soft: #e8dcc8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-[var(--color-paper)] text-[var(--color-ink)] font-sans;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-gold) 35%, transparent);
+  }
+}
+
+@keyframes rsvp-heart-float {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-72px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes rsvp-confetti {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rsvp-success-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.rsvp-success-root {
+  animation: rsvp-success-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.rsvp-heart {
+  animation: rsvp-heart-float 2.2s ease-out infinite;
+}
+
+.rsvp-confetti-piece {
+  animation: rsvp-confetti 1.4s ease-out forwards;
+}

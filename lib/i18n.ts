@@ -121,7 +121,7 @@ export const copy = {
     gifts: {
       title: "Gifts",
       body:
-        "Your presence is what we hope for most. In Chinese tradition, guests often share good wishes with a red envelope (hóngbāo) — a blessing with a cash gift inside — rather than wrapped presents. If that custom feels natural to you, we would be deeply touched; there is no expectation either way.",
+        "Your presence is what we hope for most. In Chinese tradition, guests often share good wishes with a red pocket (hóngbāo) — a blessing with a cash gift inside — rather than wrapped presents. If that custom feels natural to you, we would be deeply touched; there is no expectation either way.",
     },
     rsvp: {
       title: "Kindly respond",

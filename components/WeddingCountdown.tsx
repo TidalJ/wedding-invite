@@ -38,18 +38,18 @@ export function WeddingCountdown({ labels, doneMessage }: Props) {
 
   if (done) {
     return (
-      <p className="text-center font-serif text-2xl tracking-tight text-[var(--color-ink)] sm:text-3xl">
+      <p className="text-center font-serif text-2xl tracking-tight text-[var(--color-dream-mauve)] sm:text-3xl">
         {doneMessage}
       </p>
     );
   }
 
   return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
+    <div className="mx-auto grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
       {cells.map((c) => (
         <div
           key={c.label}
-          className="rounded-2xl border border-black/[0.08] bg-[var(--color-paper)] px-4 py-5 text-center shadow-sm"
+          className="rounded-2xl border border-dream bg-white/70 px-4 py-5 text-center shadow-[0_6px_28px_color-mix(in_srgb,var(--color-dream-rose)_10%,transparent)] backdrop-blur-sm"
         >
           <p className="font-serif text-[clamp(1.75rem,5vw,2.75rem)] tabular-nums tracking-tight text-[var(--color-ink)]">
             {c.value}

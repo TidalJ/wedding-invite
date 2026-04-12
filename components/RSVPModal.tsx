@@ -61,12 +61,12 @@ export function RSVPModal({
       <button
         type="button"
         aria-label={c.close}
-        className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
+        className="absolute inset-0 bg-[var(--color-ink)]/25 backdrop-blur-sm transition-opacity"
         onClick={onClose}
       />
 
-      <div className="relative z-[101] flex max-h-[min(92dvh,880px)] w-full max-w-2xl flex-col overflow-hidden rounded-t-[1.25rem] border border-black/10 bg-[var(--color-paper)] shadow-2xl sm:rounded-3xl">
-        <header className="flex shrink-0 items-center justify-between border-b border-black/5 px-5 py-4 sm:px-6">
+      <div className="relative z-[101] flex max-h-[min(92dvh,880px)] w-full max-w-2xl flex-col overflow-hidden rounded-t-[1.25rem] border border-dream bg-[color-mix(in_srgb,var(--color-paper)_98%,var(--color-dream-blush))] shadow-[0_24px_80px_color-mix(in_srgb,var(--color-dream-rose)_18%,transparent)] sm:rounded-3xl">
+        <header className="flex shrink-0 items-center justify-between border-b border-dream px-5 py-4 sm:px-6">
           <h2
             id="rsvp-modal-title"
             className="font-serif text-lg tracking-tight text-[var(--color-ink)] sm:text-xl"
@@ -76,13 +76,13 @@ export function RSVPModal({
           <button
             type="button"
             onClick={onClose}
-            className="rounded-full px-3 py-2 text-sm text-[var(--color-stone)] transition hover:bg-black/5 hover:text-[var(--color-ink)]"
+            className="rounded-full px-3 py-2 text-sm text-[var(--color-stone)] transition hover:bg-[var(--color-dream-blush)] hover:text-[var(--color-ink)]"
           >
             {c.close}
           </button>
         </header>
 
-        <div className="relative min-h-[50dvh] flex-1 bg-white/50">
+        <div className="relative min-h-[50dvh] flex-1 bg-white/40">
           {inlineRsvpAvailable ? (
             <RSVPInlineForm locale={locale} />
           ) : embedUrl ? (
@@ -112,7 +112,7 @@ export function RSVPModal({
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[var(--color-ink)] px-6 py-3 text-sm font-medium text-[var(--color-paper)] transition hover:opacity-90"
+                  className="btn-dream px-6 py-3 text-sm font-medium normal-case tracking-normal"
                 >
                   {c.openExternal}
                 </a>
@@ -122,12 +122,12 @@ export function RSVPModal({
         </div>
 
         {href && embedUrl ? (
-          <footer className="shrink-0 border-t border-black/5 px-5 py-3 text-center sm:px-6">
+          <footer className="shrink-0 border-t border-dream px-5 py-3 text-center sm:px-6">
             <a
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-[var(--color-stone)] underline-offset-4 hover:text-[var(--color-ink)] hover:underline"
+              className="text-xs text-[var(--color-stone)] underline-offset-4 hover:text-[var(--color-dream-mauve)] hover:underline"
             >
               {c.openExternal}
             </a>

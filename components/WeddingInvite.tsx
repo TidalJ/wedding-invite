@@ -5,6 +5,7 @@ import { CinematicHero } from "@/components/CinematicHero";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { Reveal } from "@/components/Reveal";
 import { RSVPModal } from "@/components/RSVPModal";
+import { ScheduleProgramme } from "@/components/ScheduleProgramme";
 import { VenueGallery } from "@/components/VenueGallery";
 import { VenueMap } from "@/components/VenueMap";
 import { WeddingCountdown } from "@/components/WeddingCountdown";
@@ -39,45 +40,41 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navLink =
-    navOnLight
-      ? "text-[var(--color-stone)] hover:text-[var(--color-ink)]"
-      : "text-white/55 hover:text-white";
+  const navLink = navOnLight
+    ? "text-[var(--color-stone)] hover:text-[var(--color-ink)]"
+    : "text-[var(--color-ink)]/60 hover:text-[var(--color-ink)]";
 
   return (
     <>
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div
-          className="absolute -left-1/4 top-[-20%] h-[55%] w-[70%] rounded-full opacity-[0.14]"
+          className="absolute -left-1/4 top-[-20%] h-[55%] w-[70%] rounded-full opacity-[0.2]"
           style={{
             background:
-              "radial-gradient(closest-side, var(--color-gold-soft), transparent)",
+              "radial-gradient(closest-side, color-mix(in srgb, var(--color-dream-rose) 28%, transparent), transparent)",
           }}
         />
         <div
-          className="absolute -right-1/4 bottom-[-25%] h-[60%] w-[75%] rounded-full opacity-[0.12]"
+          className="absolute -right-1/4 bottom-[-25%] h-[60%] w-[75%] rounded-full opacity-[0.16]"
           style={{
             background:
-              "radial-gradient(closest-side, #c9d4e8, transparent)",
+              "radial-gradient(closest-side, color-mix(in srgb, #c4bdd4 35%, transparent), transparent)",
           }}
         />
       </div>
 
       <header
         className={[
-          "fixed left-0 right-0 top-0 z-50 transition-[background,border-color,backdrop-filter] duration-500",
+          "fixed left-0 right-0 top-0 z-50 transition-[background,backdrop-filter] duration-500",
           navOnLight
-            ? "border-b border-black/[0.06] bg-[color-mix(in_srgb,var(--color-paper)_88%,transparent)] backdrop-blur-xl"
-            : "border-b border-transparent bg-gradient-to-b from-black/50 to-transparent backdrop-blur-md",
+            ? "bg-[color-mix(in_srgb,var(--color-paper)_90%,transparent)] backdrop-blur-xl"
+            : "bg-white/40 backdrop-blur-xl",
         ].join(" ")}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <a
             href="#top"
-            className={[
-              "font-serif text-base tracking-tight sm:text-lg",
-              navOnLight ? "text-[var(--color-ink)]" : "text-white",
-            ].join(" ")}
+            className="font-serif text-base tracking-tight text-[var(--color-ink)] sm:text-lg"
           >
             J & P
           </a>
@@ -97,33 +94,22 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
             <a href="#countdown" className={navLink}>
               {c.nav.countdown}
             </a>
-            <a href="#details" className={navLink}>
-              {c.nav.details}
-            </a>
-            <a href="#map" className={navLink}>
-              {c.nav.map}
-            </a>
             <a href="#schedule" className={navLink}>
               {c.nav.schedule}
             </a>
             <a href="#dress" className={navLink}>
               {c.nav.dress}
             </a>
-            <button type="button" onClick={() => setRsvpOpen(true)} className={navLink}>
+            <a href="#rsvp" className={navLink}>
               {c.nav.rsvp}
-            </button>
+            </a>
           </nav>
           <div className="flex items-center gap-2 sm:gap-3">
-            <LanguageToggle locale={locale} onChange={setLocale} inverted={!navOnLight} />
+            <LanguageToggle locale={locale} onChange={setLocale} />
             <button
               type="button"
               onClick={() => setRsvpOpen(true)}
-              className={[
-                "rounded-full px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] shadow-sm transition hover:opacity-90 sm:px-5",
-                navOnLight
-                  ? "bg-[var(--color-ink)] text-[var(--color-paper)]"
-                  : "bg-white text-[#0a0a0b]",
-              ].join(" ")}
+              className="btn-dream px-4 py-2.5 text-[11px] tracking-[0.14em] sm:px-5"
             >
               {c.nav.rsvp}
             </button>
@@ -132,13 +118,11 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
       </header>
 
       <main id="top">
-        <div className="bg-[#070708]">
-          <CinematicHero copy={c.hero} onRsvp={() => setRsvpOpen(true)} />
-        </div>
+        <CinematicHero copy={c.hero} onRsvp={() => setRsvpOpen(true)} />
 
         <section
           id="story"
-          className="border-t border-black/[0.06] px-6 py-24 sm:px-10 sm:py-32"
+          className="scroll-mt-24 border-t border-dream px-6 py-24 text-center sm:px-10 sm:py-32"
         >
           <div className="mx-auto max-w-3xl">
             <Reveal>
@@ -158,17 +142,72 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
           </div>
         </section>
 
-        <Reveal>
-          <VenueGallery
-            title={c.venue.title}
-            credit={c.venue.credit}
-            morePhotos={c.venue.morePhotos}
-          />
-        </Reveal>
+        <section
+          id="venue"
+          className="scroll-mt-24 border-t border-dream bg-[var(--color-paper)]"
+          aria-labelledby="venue-heading"
+        >
+          <div className="mx-auto max-w-[min(100%,1320px)] px-5 pb-24 pt-20 sm:px-10 sm:pb-32 sm:pt-28 lg:px-14 lg:pb-36 lg:pt-32">
+            <Reveal>
+              <VenueGallery
+                headingId="venue-heading"
+                title={c.venue.title}
+                credit={c.venue.credit}
+                plateLine={c.venue.plateLine}
+              />
+            </Reveal>
+
+            <Reveal delayMs={80} className="mt-14 sm:mt-16 lg:mt-20">
+              <div className="mx-auto max-w-2xl text-center">
+                <p className="font-serif text-[clamp(1.25rem,3vw,1.75rem)] leading-snug tracking-tight text-[var(--color-ink)]">
+                  {c.intro.title}
+                </p>
+                <p className="mt-5 text-[15px] leading-[1.85] text-[var(--color-stone)] sm:text-base">
+                  {c.intro.body}
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delayMs={120} className="mt-16 sm:mt-20 lg:mt-24">
+              <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-12 lg:max-w-2xl">
+                <div className="w-full text-center">
+                  <h3 className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-stone)]">
+                    {c.details.title}
+                  </h3>
+                  <dl className="mt-8 space-y-9">
+                    {(
+                      [
+                        ["venue", c.details.venue, c.details.venueValue],
+                        ["address", c.details.address, c.details.addressValue],
+                        ["parking", c.details.parking, c.details.parkingValue],
+                      ] as const
+                    ).map(([key, dt, dd]) => (
+                      <div key={key}>
+                        <dt className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-stone)]">
+                          {dt}
+                        </dt>
+                        <dd className="mt-2.5 text-[15px] leading-relaxed text-[var(--color-ink)] sm:text-base">
+                          {dd}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+                <div className="w-full max-w-md">
+                  <VenueMap
+                    title={c.map.title}
+                    directionsLabel={c.map.directions}
+                    address={c.details.addressValue}
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
 
         <section
           id="countdown"
-          className="border-t border-black/[0.06] bg-[var(--color-mist)]/35 px-6 py-24 sm:px-10 sm:py-32"
+          className="scroll-mt-24 border-t border-dream bg-gradient-to-b from-[var(--color-dream-lavender)]/25 to-transparent px-6 py-24 text-center sm:px-10 sm:py-32"
         >
           <div className="mx-auto max-w-4xl">
             <Reveal>
@@ -191,126 +230,54 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
         </section>
 
         <section
-          id="details"
-          className="border-t border-black/[0.06] px-6 py-24 sm:px-10 sm:py-32"
+          id="schedule"
+          className="scroll-mt-24 border-t border-dream px-6 py-24 text-center sm:px-10 sm:py-32"
         >
-          <div className="mx-auto max-w-3xl">
-            <Reveal>
-              <h2 className="font-serif text-3xl tracking-tight text-[var(--color-ink)] sm:text-4xl">
-                {c.intro.title}
-              </h2>
-              <p className="mt-6 text-base leading-relaxed text-[var(--color-stone)] sm:text-lg">
-                {c.intro.body}
-              </p>
-            </Reveal>
-
-            <Reveal delayMs={120} className="mt-20">
-              <h3 className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[var(--color-stone)]">
-                {c.details.title}
-              </h3>
-              <dl className="mt-10 space-y-10">
-                {(
-                  [
-                    ["venue", c.details.venue, c.details.venueValue],
-                    ["address", c.details.address, c.details.addressValue],
-                    ["time", c.details.time, c.details.timeValue],
-                    [
-                      "reception",
-                      c.details.reception,
-                      c.details.receptionValue,
-                    ],
-                    ["parking", c.details.parking, c.details.parkingValue],
-                  ] as const
-                ).map(([key, dt, dd]) => (
-                  <div
-                    key={key}
-                    className="grid gap-2 border-b border-black/[0.06] pb-10 last:border-0 last:pb-0 sm:grid-cols-[minmax(0,160px)_1fr] sm:gap-10"
-                  >
-                    <dt className="text-[11px] font-medium tracking-[0.22em] uppercase text-[var(--color-stone)]">
-                      {dt}
-                    </dt>
-                    <dd className="text-base text-[var(--color-ink)] sm:text-lg">
-                      {dd}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </Reveal>
-          </div>
-        </section>
-
-        <section id="map" className="px-6 pb-24 sm:px-10 sm:pb-32">
-          <div className="mx-auto max-w-3xl">
-            <Reveal>
-              <VenueMap
-                title={c.map.title}
-                openInMaps={c.map.openInMaps}
-                address={c.details.addressValue}
-              />
-            </Reveal>
-          </div>
-        </section>
-
-        <section id="schedule" className="border-t border-black/[0.06] px-6 py-24 sm:px-10 sm:py-32">
-          <div className="mx-auto max-w-3xl">
-            <Reveal>
-              <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
-                {c.schedule.title}
-              </h2>
-              <ol className="mt-14 space-y-0">
-                {c.schedule.items.map((item, idx) => (
-                  <li
-                    key={item.label}
-                    className="group flex gap-6 border-t border-black/[0.06] py-8 first:border-t-0 first:pt-0 sm:gap-10"
-                  >
-                    <span className="w-24 shrink-0 pt-0.5 text-sm font-medium tabular-nums text-[var(--color-gold)] sm:w-28 sm:text-base">
-                      {item.time}
-                    </span>
-                    <span className="text-base text-[var(--color-ink)] sm:text-lg">
-                      {item.label}
-                    </span>
-                    <span className="ml-auto hidden text-xs text-[var(--color-stone)] opacity-0 transition group-hover:opacity-100 sm:block">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            </Reveal>
-          </div>
+          <Reveal>
+            <ScheduleProgramme
+              title={c.schedule.title}
+              dek={c.schedule.dek}
+              timesNote={c.schedule.timesNote}
+              groups={c.schedule.groups}
+            />
+          </Reveal>
         </section>
 
         <section
           id="dress"
-          className="border-t border-black/[0.06] bg-[var(--color-ink)] px-6 py-24 text-[var(--color-paper)] sm:px-10 sm:py-32"
+          className="scroll-mt-24 border-t border-dream bg-gradient-to-br from-[var(--color-twilight-from)] via-[var(--color-twilight-via)] to-[var(--color-twilight-to)] px-6 py-24 text-center text-[#fdf9fc] sm:px-10 sm:py-32"
         >
           <div className="mx-auto max-w-3xl">
             <Reveal>
-              <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/50">
+              <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/55">
                 {c.dress.title}
               </p>
               <p className="mt-6 font-serif text-3xl tracking-tight sm:text-4xl">
                 {c.dress.code}
               </p>
-              <p className="mt-8 text-base leading-relaxed text-white/75 sm:text-lg">
+              <p className="mt-8 text-base leading-relaxed text-white/85 sm:text-lg">
                 {c.dress.hint}
               </p>
-              <p className="mt-6 text-sm leading-relaxed text-white/55 sm:text-base">
+              <p className="mt-6 text-sm leading-relaxed text-white/65 sm:text-base">
                 {c.dress.note}
               </p>
             </Reveal>
 
-            <Reveal delayMs={100} className="mt-20 rounded-2xl border border-white/10 bg-white/[0.04] p-8 sm:p-10">
-              <h3 className="text-[11px] font-semibold tracking-[0.28em] uppercase text-white/45">
+            <Reveal
+              delayMs={100}
+              className="mt-20 rounded-2xl border border-white/20 bg-white/[0.08] p-8 text-center backdrop-blur-sm sm:p-10"
+            >
+              <h3 className="text-[11px] font-semibold tracking-[0.28em] uppercase text-white/55">
                 {c.gifts.title}
               </h3>
-              <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
+              <p className="mx-auto mt-5 max-w-prose text-base leading-relaxed text-white/80 sm:text-lg">
                 {c.gifts.body}
               </p>
             </Reveal>
           </div>
         </section>
 
-        <section id="rsvp" className="px-6 py-24 sm:px-10 sm:py-32">
+        <section id="rsvp" className="scroll-mt-24 px-6 py-24 sm:px-10 sm:py-32">
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
               <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
@@ -322,7 +289,7 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
               <button
                 type="button"
                 onClick={() => setRsvpOpen(true)}
-                className="mt-10 inline-flex rounded-full bg-[var(--color-ink)] px-10 py-4 text-[12px] font-semibold tracking-[0.2em] uppercase text-[var(--color-paper)] shadow-lg shadow-black/10 transition hover:opacity-90"
+                className="btn-dream mt-10 inline-flex px-10 py-4 text-[12px] tracking-[0.2em] shadow-lg"
               >
                 {c.rsvp.button}
               </button>
@@ -334,7 +301,7 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
         </section>
       </main>
 
-      <footer className="border-t border-black/[0.06] px-6 py-12 text-center sm:py-16">
+      <footer className="border-t border-dream px-6 py-12 text-center sm:py-16">
         <p className="font-serif text-lg text-[var(--color-ink)]">{c.footer.line}</p>
         <p className="mx-auto mt-4 max-w-md text-xs leading-relaxed text-[var(--color-stone)]">
           {c.footer.privacy}

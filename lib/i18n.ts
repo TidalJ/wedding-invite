@@ -6,9 +6,7 @@ export const copy = {
       story: "Story",
       venue: "Venue",
       countdown: "Countdown",
-      details: "Details",
-      map: "Map",
-      schedule: "Schedule",
+      schedule: "Programme",
       dress: "Attire",
       rsvp: "RSVP",
     },
@@ -38,13 +36,14 @@ export const copy = {
       seconds: "Seconds",
     },
     venue: {
-      title: "The venue",
-      credit: "Photos from The Manor Basket Range — historic Adelaide Hills estate.",
-      morePhotos: "More photos & details on the venue website",
+      title: "Where we gather",
+      credit:
+        "Stone, light, and the Hills — the setting we chose to begin this chapter with you.",
+      plateLine: "Fig. I — The estate",
     },
     map: {
-      title: "Find us",
-      openInMaps: "Open in Google Maps",
+      title: "Directions",
+      directions: "Open in Google Maps",
     },
     intro: {
       title: "A quiet promise, made loud with joy.",
@@ -52,39 +51,77 @@ export const copy = {
         "We would be honored to share this chapter with you — an evening of warmth, music, and the people who shaped our story.",
     },
     details: {
-      title: "The essentials",
+      title: "At a glance",
       venue: "Venue",
       venueValue: "The Manor Basket Range",
       address: "Address",
       addressValue: "762 Lobethal Rd, Basket Range SA 5138, Australia",
-      time: "Ceremony",
-      timeValue: "4:30 PM (ACDT) — please arrive by 4:15 PM",
-      reception: "Reception",
-      receptionValue: "Cocktails at 5:30 PM · Dinner at 6:30 PM",
       parking: "Parking",
-      parkingValue: "Complimentary on-site parking at the estate",
+      parkingValue:
+        "When you arrive, please follow on-site signage or the venue team’s directions. If anything changes, we’ll let you know before the day.",
     },
     schedule: {
-      title: "The flow of the evening",
-      items: [
-        { time: "4:30 PM", label: "Ceremony" },
-        { time: "5:30 PM", label: "Cocktails & portraits" },
-        { time: "6:30 PM", label: "Dinner & toasts" },
-        { time: "8:30 PM", label: "First dance & celebration" },
+      title: "Programme",
+      dek: "Timings shaped with our wedding planners — a little drift is part of the day’s grace.",
+      timesNote:
+        "Guest arrival through dinner: every time you need is in the rundown below, in order of the day.",
+      groups: [
+        {
+          label: "I · Portraits",
+          rows: [
+            {
+              time: "3:30 PM",
+              title: "Bridal photography",
+              note: "Our portrait session before the room fills with guests.",
+            },
+          ],
+        },
+        {
+          label: "II · Arrival & ceremony",
+          rows: [
+            {
+              time: "4:15 PM",
+              title: "Guest arrival",
+              note: "Please make your way in. Pinky rests and refreshes; Jay will welcome you.",
+            },
+            { time: "4:30 PM", title: "Ceremony" },
+            {
+              time: "5:00 PM",
+              title: "Ceremony concludes",
+              note: "Group portraits with everyone we love.",
+            },
+            {
+              time: "5:30 PM",
+              title: "Portraits end",
+              note: "Pinky changes for the evening; a short pause before dinner.",
+            },
+          ],
+        },
+        {
+          label: "III · Reception",
+          rows: [
+            { time: "6:15 PM", title: "Reception opens" },
+            {
+              time: "6:30 PM",
+              title: "Reception photography wraps",
+              note: "Formal photos step back; the feast and celebration carry on.",
+            },
+          ],
+        },
       ],
     },
     dress: {
       title: "Dress code",
-      code: "Cocktail attire",
+      code: "Attire",
       hint:
-        "Think refined, breathable fabrics — soft neutrals, midnight blue, or botanical tones. Jackets appreciated; ties optional.",
+        "Think refined, breathable fabrics — soft neutrals, midnight blue, or botanical tones, avoid red. Jackets appreciated; ties optional.",
       note:
         "Summer evening in the Hills can cool down after sunset — a light wrap is a thoughtful touch.",
     },
     gifts: {
       title: "Gifts",
       body:
-        "Your presence is our greatest gift. If you wish to honor us further, a contribution to our future home would mean the world.",
+        "Your presence is what we hope for most. In Chinese tradition, guests often share good wishes with a red envelope (hóngbāo) — a blessing with a cash gift inside — rather than wrapped presents. If that custom feels natural to you, we would be deeply touched; there is no expectation either way.",
     },
     rsvp: {
       title: "Kindly respond",
@@ -124,8 +161,6 @@ export const copy = {
       story: "故事",
       venue: "场地",
       countdown: "倒计时",
-      details: "婚礼信息",
-      map: "地图",
       schedule: "流程",
       dress: "着装",
       rsvp: "回执",
@@ -156,13 +191,13 @@ export const copy = {
       seconds: "秒",
     },
     venue: {
-      title: "婚礼场地",
-      credit: "照片来自 The Manor Basket Range 官方网站 — 阿德莱德山历史庄园。",
-      morePhotos: "更多照片与介绍见场地官网",
+      title: "相聚之地",
+      credit: "石墙、天光与山丘 — 我们在这里，与你们开启这一章。",
+      plateLine: "图一 · 庄园",
     },
     map: {
-      title: "场地地图",
-      openInMaps: "在 Google 地图中打开",
+      title: "路线",
+      directions: "在 Google 地图中打开",
     },
     intro: {
       title: "把温柔说给彼此听，把喜悦留给重要的人。",
@@ -170,38 +205,76 @@ export const copy = {
         "若能与您同席，我们将倍感荣幸。愿这一晚有音乐、微风，以及一路陪伴我们的人们。",
     },
     details: {
-      title: "关键信息",
+      title: "要点一览",
       venue: "场地",
       venueValue: "The Manor Basket Range",
       address: "地址",
       addressValue: "澳大利亚南澳州 Basket Range，Lobethal 路 762 号，邮编 5138",
-      time: "仪式",
-      timeValue: "下午 4:30（ACDT 夏令时）— 请于 4:15 前抵达",
-      reception: "晚宴",
-      receptionValue: "5:30 鸡尾酒 · 6:30 正式用餐",
       parking: "停车",
-      parkingValue: "庄园内提供免费停车位",
+      parkingValue:
+        "抵达时请遵照场地指示牌或工作人员引导停车。若有变动，我们会在婚礼前另行通知。",
     },
     schedule: {
-      title: "当晚流程",
-      items: [
-        { time: "16:30", label: "仪式" },
-        { time: "17:30", label: "鸡尾酒与合影" },
-        { time: "18:30", label: "晚宴与祝酒" },
-        { time: "20:30", label: "第一支舞与派对" },
+      title: "婚礼流程",
+      dek: "时间与节奏由我们与婚礼策划共同梳理；当日若有微调，只为更从容的美好。",
+      timesNote:
+        "宾客抵达、仪式至晚宴：您需要的时刻均已按当日顺序列于下方时间表。",
+      groups: [
+        {
+          label: "壹 · 婚纱照",
+          rows: [
+            {
+              time: "15:30",
+              title: "婚纱照拍摄",
+              note: "仪式前，我们先留下只属于两人的影像。",
+            },
+          ],
+        },
+        {
+          label: "贰 · 抵达与仪式",
+          rows: [
+            {
+              time: "16:15",
+              title: "宾客抵达",
+              note: "请陆续入场。新娘补妆休息；新郎在门口迎候各位。",
+            },
+            { time: "16:30", title: "仪式" },
+            {
+              time: "17:00",
+              title: "仪式礼成",
+              note: "全体亲友合影。",
+            },
+            {
+              time: "17:30",
+              title: "合影结束",
+              note: "新娘换装准备晚宴；中间稍作休整。",
+            },
+          ],
+        },
+        {
+          label: "叁 · 晚宴",
+          rows: [
+            { time: "18:15", title: "晚宴开场" },
+            {
+              time: "18:30",
+              title: "晚宴拍摄结束",
+              note: "正式拍摄告一段落，之后请尽兴用餐与庆祝。",
+            },
+          ],
+        },
       ],
     },
     dress: {
       title: "着装要求",
-      code: "鸡尾酒会正装（Cocktail）",
+      code: "正装",
       hint:
-        "质感上乘、透气舒适的面料为佳 — 米色、午夜蓝或柔和的植物色调都很合适。建议西装外套；领带可随个人风格。",
+        "质感上乘、透气舒适的面料为佳 — 米色、午夜蓝或柔和的植物色调都很合适,尽量避免红色。建议西装外套；领带可随个人风格。",
       note: "阿德莱德山夏季傍晚日落後可能转凉，建议备一件薄外套。",
     },
     gifts: {
-      title: "礼物",
+      title: "心意与礼金",
       body:
-        "您的到来已是最好的礼物。若仍想表达心意，一份对我们未来小家的祝福将格外珍贵。",
+        "您能前来见证我们的婚礼，就是给我们最珍贵的礼物。按照中式礼节，许多亲友会以「红包」送上祝福（礼金置于红包内），而非实体礼品。若您也愿意用这种方式表达心意，我们会非常感激；一切随缘、重在情意，绝无勉强。",
     },
     rsvp: {
       title: "敬请回复",

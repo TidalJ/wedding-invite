@@ -1,55 +1,54 @@
 import Image from "next/image";
-import { VENUE_GALLERY, VENUE_WEBSITE } from "@/lib/wedding-meta";
+import { VENUE_FEATURE_IMAGE } from "@/lib/wedding-meta";
 
 type Props = {
   title: string;
   credit: string;
-  morePhotos: string;
+  plateLine: string;
+  /** For <section aria-labelledby> — should match the primary venue heading */
+  headingId?: string;
 };
 
-export function VenueGallery({ title, credit, morePhotos }: Props) {
+/**
+ * Editorial “catalogue plate” layout: one image as the artwork, typography as caption.
+ * Parent supplies the surrounding <section id="venue"> so copy, address, and map stay one unit.
+ */
+export function VenueGallery({ title, credit, plateLine, headingId }: Props) {
   return (
-    <section
-      id="venue"
-      className="border-t border-black/[0.06] bg-[var(--color-mist)]/25 px-6 py-24 sm:px-10 sm:py-32"
-    >
-      <div className="mx-auto max-w-5xl">
-        <div className="text-center">
-          <h2 className="font-serif text-3xl tracking-tight text-[var(--color-ink)] sm:text-4xl">
+    <figure className="m-0">
+      <div className="relative w-full overflow-hidden bg-[var(--color-dream-lavender)]/20 outline outline-1 outline-[color-mix(in_srgb,var(--color-dream-rose)_15%,transparent)] outline-offset-[-1px]">
+        <div className="relative aspect-[16/10] min-h-[220px] w-full sm:aspect-[21/11] sm:min-h-[360px] lg:min-h-[min(72vh,560px)]">
+          <Image
+            src={VENUE_FEATURE_IMAGE.src}
+            alt={VENUE_FEATURE_IMAGE.alt}
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1320px) 100vw, 1320px"
+            priority={false}
+          />
+        </div>
+      </div>
+
+      <figcaption className="mt-8 text-center lg:mt-12">
+        <div className="mx-auto max-w-2xl">
+          <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-[var(--color-stone)]">
+            {plateLine}
+          </p>
+          <h2
+            id={headingId}
+            className="mt-5 font-serif text-[clamp(1.875rem,4.5vw,3rem)] font-normal leading-[1.08] tracking-[-0.02em] text-[var(--color-ink)]"
+          >
             {title}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-[var(--color-stone)]">{credit}</p>
+          <p className="mt-6 text-[15px] leading-[1.75] text-[var(--color-stone)] sm:text-base">
+            {credit}
+          </p>
         </div>
-
-        <div className="mt-14 grid gap-4 sm:grid-cols-3 sm:gap-5">
-          {VENUE_GALLERY.map((img) => (
-            <figure
-              key={img.src}
-              className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-black/5 shadow-sm ring-1 ring-black/[0.06]"
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
-                sizes="(max-width: 640px) 100vw, 33vw"
-                priority={false}
-              />
-            </figure>
-          ))}
-        </div>
-
-        <p className="mt-10 text-center">
-          <a
-            href={VENUE_WEBSITE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-[var(--color-gold)] underline-offset-4 transition hover:underline"
-          >
-            {morePhotos}
-          </a>
-        </p>
-      </div>
-    </section>
+        <div
+          className="mx-auto mt-8 h-px w-16 bg-gradient-to-r from-transparent via-[var(--color-dream-rose)] to-transparent opacity-90"
+          aria-hidden
+        />
+      </figcaption>
+    </figure>
   );
 }

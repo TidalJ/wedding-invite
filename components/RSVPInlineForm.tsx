@@ -62,10 +62,11 @@ export function RSVPInlineForm({ locale, onSuccess }: Props) {
   }
 
   const btnBase =
-    "rounded-2xl border px-5 py-3.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2";
-  const btnIdle = "border-black/10 bg-white text-[var(--color-ink)] hover:border-black/20";
+    "rounded-2xl border px-5 py-3.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-dream-rose)] focus-visible:ring-offset-2";
+  const btnIdle =
+    "border-dream bg-white/85 text-[var(--color-ink)] hover:border-[color-mix(in_srgb,var(--color-dream-rose)_35%,white)] hover:bg-[var(--color-dream-blush)]/40";
   const btnOn =
-    "border-[var(--color-ink)] bg-[var(--color-ink)] text-[var(--color-paper)] shadow-sm";
+    "border-transparent bg-gradient-to-br from-[var(--color-dream-rose-deep)] to-[var(--color-dream-rose)] text-white shadow-md";
 
   if (status === "done") {
     return (
@@ -78,13 +79,18 @@ export function RSVPInlineForm({ locale, onSuccess }: Props) {
               style={{
                 left: `${4 + i * 6}%`,
                 animationDelay: `${i * 0.04}s`,
-                backgroundColor: i % 3 === 0 ? "var(--color-gold)" : i % 3 === 1 ? "#c9d4e8" : "#e8dcc8",
+                backgroundColor:
+                  i % 3 === 0
+                    ? "var(--color-dream-rose)"
+                    : i % 3 === 1
+                      ? "var(--color-dream-lavender)"
+                      : "var(--color-gold-soft)",
               }}
             />
           ))}
         </div>
         <span
-          className="rsvp-heart relative z-[1] text-5xl text-[var(--color-gold)] sm:text-6xl"
+          className="rsvp-heart relative z-[1] text-5xl text-[var(--color-dream-rose-deep)] sm:text-6xl"
           aria-hidden
         >
           ♥
@@ -119,7 +125,7 @@ export function RSVPInlineForm({ locale, onSuccess }: Props) {
             autoComplete="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[var(--color-ink)] outline-none ring-[var(--color-gold)] transition focus:ring-2"
+            className="mt-2 w-full rounded-xl border border-dream bg-white/90 px-4 py-3 text-[var(--color-ink)] outline-none ring-[var(--color-dream-rose)]/40 transition focus:ring-2"
           />
         </div>
 
@@ -160,7 +166,7 @@ export function RSVPInlineForm({ locale, onSuccess }: Props) {
             rows={3}
             value={allergies}
             onChange={(e) => setAllergies(e.target.value)}
-            className="mt-2 w-full resize-y rounded-xl border border-black/10 bg-white px-4 py-3 text-[var(--color-ink)] outline-none ring-[var(--color-gold)] transition focus:ring-2"
+            className="mt-2 w-full resize-y rounded-xl border border-dream bg-white/90 px-4 py-3 text-[var(--color-ink)] outline-none ring-[var(--color-dream-rose)]/40 transition focus:ring-2"
           />
         </div>
 
@@ -178,22 +184,22 @@ export function RSVPInlineForm({ locale, onSuccess }: Props) {
             rows={3}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="mt-2 w-full resize-y rounded-xl border border-black/10 bg-white px-4 py-3 text-[var(--color-ink)] outline-none ring-[var(--color-gold)] transition focus:ring-2"
+            className="mt-2 w-full resize-y rounded-xl border border-dream bg-white/90 px-4 py-3 text-[var(--color-ink)] outline-none ring-[var(--color-dream-rose)]/40 transition focus:ring-2"
           />
         </div>
 
         {status === "error" && errorMsg ? (
-          <p className="text-sm text-red-700" role="alert">
+          <p className="text-sm text-[#a65d6d]" role="alert">
             {errorMsg}
           </p>
         ) : null}
       </div>
 
-      <div className="sticky bottom-0 border-t border-black/5 bg-[var(--color-paper)] px-5 py-4 sm:px-6">
+      <div className="sticky bottom-0 border-t border-dream bg-[color-mix(in_srgb,var(--color-paper)_95%,var(--color-dream-blush))] px-5 py-4 sm:px-6">
         <button
           type="submit"
           disabled={status === "submitting" || !canSubmit}
-          className="w-full rounded-full bg-[var(--color-ink)] px-6 py-3.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-[var(--color-paper)] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+          className="btn-dream w-full px-6 py-3.5 text-[12px] tracking-[0.18em] disabled:cursor-not-allowed disabled:opacity-40"
         >
           {status === "submitting" ? f.submitting : f.submit}
         </button>

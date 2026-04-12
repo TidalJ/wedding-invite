@@ -7,12 +7,21 @@
   --font-serif: ui-serif, "New York", "Iowan Old Style", "Apple Garamond",
     Baskerville, "Times New Roman", serif;
 
-  --color-ink: #0a0a0b;
-  --color-mist: #f5f3ef;
-  --color-paper: #faf9f6;
-  --color-stone: #8a8680;
-  --color-gold: #c4a574;
-  --color-gold-soft: #e8dcc8;
+  /* Dreamy palette — soft plum ink, blush paper, rose & lavender accents */
+  --color-ink: #4a3d4f;
+  --color-paper: #fdf9fc;
+  --color-mist: #f5eff8;
+  --color-stone: #8b7a8f;
+  --color-dream-blush: #f8eef3;
+  --color-dream-lavender: #ebe3f4;
+  --color-dream-rose: #c9a4b8;
+  --color-dream-rose-deep: #9d7390;
+  --color-dream-mauve: #7d6b85;
+  --color-gold: #d4b896;
+  --color-gold-soft: #efe5dc;
+  --color-twilight-from: #6b5e78;
+  --color-twilight-via: #7a6b88;
+  --color-twilight-to: #8f7f9a;
 }
 
 @layer base {
@@ -27,7 +36,30 @@
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-gold) 35%, transparent);
+    background: color-mix(in srgb, var(--color-dream-rose) 32%, transparent);
+  }
+}
+
+/* Primary CTAs — rose gradient, no harsh black */
+@layer components {
+  .btn-dream {
+    @apply rounded-full font-semibold uppercase tracking-[0.18em] text-white shadow-md transition;
+    background: linear-gradient(
+      135deg,
+      var(--color-dream-rose-deep),
+      var(--color-dream-rose)
+    );
+    box-shadow:
+      0 4px 24px color-mix(in srgb, var(--color-dream-rose) 28%, transparent),
+      0 1px 0 color-mix(in srgb, white 25%, transparent) inset;
+  }
+
+  .btn-dream:hover {
+    filter: brightness(1.06);
+  }
+
+  .border-dream {
+    border-color: color-mix(in srgb, var(--color-dream-rose) 22%, white);
   }
 }
 
@@ -67,6 +99,19 @@
   }
 }
 
+@keyframes dream-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(2%, -1%) scale(1.02);
+  }
+  66% {
+    transform: translate(-1%, 2%) scale(0.98);
+  }
+}
+
 .rsvp-success-root {
   animation: rsvp-success-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
@@ -77,4 +122,8 @@
 
 .rsvp-confetti-piece {
   animation: rsvp-confetti 1.4s ease-out forwards;
+}
+
+.dream-orb {
+  animation: dream-float 18s ease-in-out infinite;
 }

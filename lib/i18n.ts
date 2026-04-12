@@ -121,7 +121,7 @@ export const copy = {
     gifts: {
       title: "Gifts",
       body:
-        "Your presence is what we hope for most. In Chinese tradition, guests often share good wishes with a red pocket (hóngbāo) — a blessing with a cash gift inside — rather than wrapped presents. If that custom feels natural to you, we would be deeply touched; there is no expectation either way.",
+        "Thanks for coming to celebrate this special moment with us.  In Chinese tradition, giving a red pocket (hóngbāo) is a way of offering your blessings and good wishes rather than a physical gift.  So please feel free to give according to your heart and convenience - no pressure at all.  Your presence is already the best gift to us.",
     },
     rsvp: {
       title: "Kindly respond",

@@ -5,8 +5,10 @@ import { CinematicHero } from "@/components/CinematicHero";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { Reveal } from "@/components/Reveal";
 import { RSVPModal } from "@/components/RSVPModal";
+import { RightMidSticker } from "@/components/RightMidSticker";
 import { ScheduleProgramme } from "@/components/ScheduleProgramme";
 import { TopLeftSticker } from "@/components/TopLeftSticker";
+import { TopRightFirecrackers } from "@/components/TopRightFirecrackers";
 import { VenueGallery } from "@/components/VenueGallery";
 import { VenueMap } from "@/components/VenueMap";
 import { WeddingCountdown } from "@/components/WeddingCountdown";
@@ -48,6 +50,8 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
   return (
     <>
       <TopLeftSticker />
+      <TopRightFirecrackers />
+      <RightMidSticker />
 
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div

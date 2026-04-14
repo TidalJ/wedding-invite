@@ -64,7 +64,7 @@ export const copy = {
       title: "Programme",
       dek: "Timings shaped with our wedding planners — a little drift is part of the day’s grace.",
       timesNote:
-        "Guest arrival through dinner: every time you need is in the rundown below, in order of the day.",
+        "From guest arrival to the ceremony and evening banquet, all proceedings are set out below:",
       groups: [
         {
           label: "I · Portraits",
@@ -82,18 +82,18 @@ export const copy = {
             {
               time: "4:15 PM",
               title: "Guest arrival",
-              note: "Please make your way in. Pinky rests and refreshes; Jay will welcome you.",
+              note: "Please make your way in. Pinky rests and refreshes; Jay will be out there for welcoming.",
             },
             { time: "4:30 PM", title: "Ceremony" },
             {
               time: "5:00 PM",
-              title: "Ceremony concludes",
-              note: "Group portraits with everyone we love.",
+              title: "Ceremony ends",
+              note: "Group photos with everyone we love.",
             },
             {
               time: "5:30 PM",
-              title: "Portraits end",
-              note: "Pinky changes for the evening; a short pause before dinner.",
+              title: "Group photos finished",
+              note: "Pinky will get change for the evening; a short pause before dinner.",
             },
           ],
         },
@@ -114,7 +114,7 @@ export const copy = {
       title: "Dress code",
       code: "Attire",
       hint:
-        "Think refined, breathable fabrics — soft neutrals, midnight blue, or botanical tones, avoid red. Jackets appreciated; ties optional.",
+        "Think refined, breathable fabrics — soft neutrals, midnight blue, or botanical tones, avoid red. Suit jackets appreciated; ties optional.",
       note:
         "Summer evening in the Hills can cool down after sunset — a light wrap is a thoughtful touch.",
     },
@@ -126,9 +126,9 @@ export const copy = {
     rsvp: {
       title: "Kindly respond",
       lead:
-        "Please let us know if you can join, and share any dietary notes so our kitchen can care for you beautifully.",
+        "Please let us know if you can join, and share any dietary requirements.",
       button: "Open RSVP",
-      foot: "All four fields are required before you can submit (for allergies, write “None” if applicable).",
+      foot: "All four fields are required before you can submit (for allergies, write “None” if not applicable).",
       modalTitle: "RSVP",
       close: "Close",
       loading: "Loading form…",

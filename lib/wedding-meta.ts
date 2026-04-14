@@ -9,7 +9,7 @@ export const VENUE_LNG = 138.754068;
  * Single venue photograph — place your file at public/venue/Venue.webp (case-sensitive on Linux hosts).
  */
 export const VENUE_FEATURE_IMAGE = {
-  src: "/venue/Venue.webp",
+  src: "/venue/Venue_with_character.webp",
   alt: "The Adelaide Hills estate where Jay & Pinky will celebrate",
 } as const;
 

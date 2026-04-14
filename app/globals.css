@@ -112,6 +112,132 @@
   }
 }
 
+@keyframes sticker-sway {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes cny-burn-progress {
+  0% {
+    clip-path: inset(75% 0 0 0 round 18px);
+    opacity: 0.0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0 round 18px);
+    opacity: 1;
+  }
+}
+
+@keyframes cny-burn-glow {
+  0% {
+    transform: translateY(24%);
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateY(-62%);
+    opacity: 0.78;
+  }
+}
+
+@keyframes cny-pop {
+  0% {
+    transform: translate(-8px, 18px) scale(0.5);
+    opacity: 0;
+    filter: blur(0px);
+  }
+  15% {
+    opacity: 1;
+  }
+  40% {
+    transform: translate(10px, -34px) scale(1);
+    opacity: 0.92;
+    filter: blur(0.2px);
+  }
+  100% {
+    transform: translate(18px, -64px) scale(1.2);
+    opacity: 0;
+    filter: blur(0.6px);
+  }
+}
+
+.cny-burn-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 18px;
+  mix-blend-mode: screen;
+  background:
+    radial-gradient(
+        90px 120px at 40% 92%,
+        rgba(255, 214, 102, 0.95),
+        rgba(255, 124, 38, 0.68) 38%,
+        rgba(255, 64, 64, 0.0) 70%
+      ),
+    radial-gradient(
+        60px 90px at 62% 96%,
+        rgba(255, 250, 235, 0.88),
+        rgba(255, 214, 102, 0.22) 55%,
+        rgba(255, 214, 102, 0.0) 76%
+      );
+  animation:
+    cny-burn-progress 10.5s linear infinite,
+    cny-burn-glow 3.4s ease-in-out infinite alternate;
+}
+
+.cny-pop {
+  position: absolute;
+  right: 18%;
+  bottom: 12%;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 35%, #fff 0 18%, rgba(255, 255, 255, 0) 42%),
+    radial-gradient(circle, rgba(255, 214, 102, 0.95), rgba(255, 88, 40, 0) 68%);
+  box-shadow:
+    0 0 0 0 rgba(255, 214, 102, 0.0),
+    0 0 24px 6px rgba(255, 156, 66, 0.42);
+  transform-origin: center;
+  opacity: 0;
+  animation: cny-pop 1.2s ease-out infinite;
+}
+
+.cny-pop-1 {
+  animation-delay: 0s;
+}
+
+.cny-pop-2 {
+  right: 34%;
+  bottom: 26%;
+  width: 12px;
+  height: 12px;
+  animation-delay: 0.55s;
+}
+
+.cny-pop-3 {
+  right: 22%;
+  bottom: 44%;
+  width: 10px;
+  height: 10px;
+  animation-delay: 0.92s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cny-burn-layer,
+  .cny-pop {
+    animation: none !important;
+    opacity: 0.85;
+  }
+}
+
 .rsvp-success-root {
   animation: rsvp-success-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }

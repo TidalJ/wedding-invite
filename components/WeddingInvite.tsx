@@ -6,6 +6,8 @@ import { LanguageToggle } from "@/components/LanguageToggle";
 import { Reveal } from "@/components/Reveal";
 import { RSVPModal } from "@/components/RSVPModal";
 import { ScheduleProgramme } from "@/components/ScheduleProgramme";
+import { TopRightFirecrackers } from "@/components/TopRightFirecrackers";
+import { TopLeftSticker } from "@/components/TopLeftSticker";
 import { VenueGallery } from "@/components/VenueGallery";
 import { VenueMap } from "@/components/VenueMap";
 import { WeddingCountdown } from "@/components/WeddingCountdown";
@@ -46,6 +48,9 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
 
   return (
     <>
+      <TopLeftSticker />
+      <TopRightFirecrackers />
+
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div
           className="absolute -left-1/4 top-[-20%] h-[55%] w-[70%] rounded-full opacity-[0.2]"

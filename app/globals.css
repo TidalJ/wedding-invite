@@ -6,6 +6,7 @@
     Arial, sans-serif;
   --font-serif: ui-serif, "New York", "Iowan Old Style", "Apple Garamond",
     Baskerville, "Times New Roman", serif;
+  --font-display: var(--font-serif);
 
   /* Dreamy palette — soft plum ink, blush paper, rose & lavender accents */
   --color-ink: #4a3d4f;
@@ -60,6 +61,10 @@
 
   .border-dream {
     border-color: color-mix(in srgb, var(--color-dream-rose) 22%, white);
+  }
+
+  .reveal-root span.relative {
+    font-family: var(--font-display);
   }
 }
 

@@ -81,7 +81,7 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <a
             href="#top"
-            className="font-serif text-base tracking-tight text-[var(--color-ink)] sm:text-lg"
+            className="font-display text-base tracking-tight text-[var(--color-ink)] sm:text-lg"
           >
             J & P
           </a>

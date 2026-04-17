@@ -34,6 +34,7 @@ export function Reveal({ children, className = "", delayMs = 0 }: RevealProps) {
     <div
       ref={ref}
       className={[
+        "reveal-root",
         "transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform",
         visible
           ? "translate-y-0 opacity-100"

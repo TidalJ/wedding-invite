@@ -1,5 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import { Great_Vibes } from "next/font/google";
 import "./globals.css";
+
+const displayFont = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   title: "Jay & Pinky — Wedding",
@@ -25,7 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-dvh overflow-x-hidden">{children}</body>
+      <body className={[displayFont.variable, "min-h-dvh overflow-x-hidden"].join(" ")}>
+        {children}
+      </body>
     </html>
   );
 }

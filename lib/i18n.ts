@@ -12,7 +12,7 @@ export const copy = {
     },
     hero: {
       kicker: "Together with their families",
-      title: "Jay & Pinky",
+      title: "Jay  &  Pinky",
       subtitle: "Invite you to celebrate their wedding",
       dateLine: "Wednesday, February 17, 2027",
       locationLine: "Adelaide Hills · The Manor Basket Range",

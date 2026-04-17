@@ -47,12 +47,12 @@ export function CinematicHero({ copy, onRsvp }: Props) {
           <span key={`jay-${m.at}`} className="relative inline-block align-baseline">
             <span className="relative z-10">Jay</span>
             <Image
-              src="/stickers/Picture2.png"
+              src="/stickers/jay-sticker-transparent.png"
               alt=""
               aria-hidden
               width={700}
               height={700}
-              className="pointer-events-none absolute left-[45%] top-[60%] z-0 h-[1.1em] w-auto -translate-x-1/2 -translate-y-1/2 opacity-95 [transform:translate(-50%,-50%)_scaleX(-1)]"
+              className="pointer-events-none absolute left-[46%] top-[110%] z-0 h-[0.8em] w-auto -translate-x-1/2 -translate-y-1/2 opacity-95 [transform:translate(-50%,-50%)]"
               priority
             />
           </span>,
@@ -61,13 +61,19 @@ export function CinematicHero({ copy, onRsvp }: Props) {
         continue;
       }
 
-      // "Pinky" with a sticker positioned above the trailing "y"
+      // "Pinky" with a sticker positioned above the word
       parts.push(
-        <span key={`pinky-${m.at}`} className="inline-block">
-          {"Pink"}
-          <span className="relative inline-block align-baseline">
-            <span className="relative z-10">y</span>
-          </span>
+        <span key={`pinky-${m.at}`} className="relative inline-block align-baseline">
+          <span className="relative z-10">Pinky</span>
+          <Image
+            src="/stickers/Picture1.png"
+            alt=""
+            aria-hidden
+            width={700}
+            height={700}
+              className="pointer-events-none absolute left-[100%] top-0 z-20 h-[0.75em] w-auto -translate-x-1/2 translate-y-[6%] rotate-[15deg] opacity-95"
+            priority
+          />
         </span>,
       );
       cursor = m.at + "Pinky".length;
@@ -80,9 +86,22 @@ export function CinematicHero({ copy, onRsvp }: Props) {
 
   return (
     <section className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-6 pb-28 pt-28 text-center sm:px-10 sm:pb-36 sm:pt-32">
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <Image
+          src="/bg/sakura-path.png"
+          alt=""
+          aria-hidden
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-60 blur-[1px] saturate-[0.95] brightness-[1.05]"
+        />
+        <div className="absolute inset-0 bg-[color-mix(in_srgb,var(--color-paper)_20%,transparent)]" />
+      </div>
+
       {/* Soft dreamy atmosphere */}
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#f3e8f5] via-[#faf5f2] to-[var(--color-paper)]"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#f3e8f5] via-[#faf5f2] to-[var(--color-paper)] opacity-40"
         aria-hidden
       />
       <div
@@ -106,7 +125,7 @@ export function CinematicHero({ copy, onRsvp }: Props) {
           Solid fill (no bg-clip-text): gradient text clips descenders in many browsers
           and can make names like “Jay & Pinky” look cut off.
         */}
-        <h1 className="mx-auto max-w-4xl font-serif text-[clamp(2.5rem,11vw,5.75rem)] font-light leading-[1.08] tracking-[-0.03em] text-[var(--color-ink)]">
+        <h1 className="mx-auto max-w-4xl font-display text-[clamp(2.5rem,11vw,5.75rem)] font-light leading-[1.08] tracking-[-0.03em] text-[var(--color-ink)]">
           {titleNode}
         </h1>
         <p className="mx-auto mt-8 max-w-lg text-base leading-relaxed text-[var(--color-stone)] sm:text-lg">

@@ -300,6 +300,9 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
               >
                 {c.rsvp.button}
               </button>
+              <p className="mt-4 text-sm font-medium tracking-wide text-[var(--color-ink)]">
+                {c.rsvp.deadline}
+              </p>
               <p className="mx-auto mt-8 max-w-md text-sm leading-relaxed text-[var(--color-stone)]">
                 {c.rsvp.foot}
               </p>

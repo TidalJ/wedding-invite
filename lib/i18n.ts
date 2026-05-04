@@ -128,6 +128,7 @@ export const copy = {
       lead:
         "Please let us know if you can join, and share any dietary requirements.",
       button: "Open RSVP",
+      deadline: "Deadline 30 Nov 2026",
       foot: "All four fields are required before you can submit (for allergies, write “None” if not applicable).",
       modalTitle: "RSVP",
       close: "Close",
@@ -281,6 +282,7 @@ export const copy = {
       lead:
         "请告知是否能够出席，并备注饮食信息，方便厨房为您细心安排。",
       button: "打开回执",
+      deadline: "回复截止：2026 年 11 月 30 日",
       foot: "须完整填写四项才可提交（若无过敏，请填写「无」）。",
       modalTitle: "婚礼回执",
       close: "关闭",

@@ -17,6 +17,7 @@ export const copy = {
       dateLine: "Wednesday, February 17, 2027",
       locationLine: "Adelaide Hills · The Manor Basket Range",
       cta: "Respond",
+      rsvpDeadline: "RSVP Deadline: 30 Nov 2026",
       scroll: "Our story",
     },
     loveStory: {
@@ -173,6 +174,7 @@ export const copy = {
       dateLine: "2027 年 2 月 17 日 · 星期三",
       locationLine: "阿德莱德山 · The Manor Basket Range",
       cta: "填写预约",
+      rsvpDeadline: "预约截止：2026 年 11 月 30 日",
       scroll: "我们的故事",
     },
     loveStory: {

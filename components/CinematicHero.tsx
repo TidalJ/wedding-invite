@@ -11,6 +11,7 @@ type HeroCopy = {
   dateLine: string;
   locationLine: string;
   cta: string;
+  rsvpDeadline: string;
   scroll: string;
 };
 
@@ -136,17 +137,22 @@ export function CinematicHero({ copy, onRsvp }: Props) {
           {copy.dateLine}
         </p>
         <p className="mt-2 text-sm text-[var(--color-stone)] sm:text-base">{copy.locationLine}</p>
-        <div className="mt-14 flex flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-6">
-          <button
-            type="button"
-            onClick={onRsvp}
-            className="btn-dream w-full min-w-[220px] px-10 py-4 text-[11px] sm:w-auto"
-          >
-            {copy.cta}
-          </button>
+        <div className="mt-14 flex flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-6 sm:items-start">
+          <div className="flex w-full flex-col items-center sm:w-auto">
+            <button
+              type="button"
+              onClick={onRsvp}
+              className="btn-dream w-full min-w-[220px] px-10 py-4 text-[11px] sm:w-auto"
+            >
+              {copy.cta}
+            </button>
+            <p className="mt-3 text-center text-sm text-[var(--color-stone)]">
+              {copy.rsvpDeadline}
+            </p>
+          </div>
           <a
             href="#story"
-            className="text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-dream-rose-deep)]/80 underline-offset-8 transition hover:text-[var(--color-dream-rose-deep)] hover:underline"
+            className="text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-dream-rose-deep)]/80 underline-offset-8 transition hover:text-[var(--color-dream-rose-deep)] hover:underline sm:mt-2"
           >
             {copy.scroll}
           </a>

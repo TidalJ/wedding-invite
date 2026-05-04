@@ -64,7 +64,7 @@ export function CinematicHero({ copy, onRsvp }: Props) {
       // "Pinky" with a sticker positioned above the word
       parts.push(
         <span key={`pinky-${m.at}`} className="relative inline-block align-baseline">
-          <span className="relative z-10">Pinky</span>
+          <span className="relative z-10 [border-right:5px_solid_var(--color-ink)]">Pinky</span>
           <Image
             src="/stickers/Picture1.png"
             alt=""

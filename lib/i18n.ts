@@ -12,7 +12,7 @@ export const copy = {
     },
     hero: {
       kicker: "Together with their families",
-      title: "Jay  &  Pinky",
+      title: "Jay       &      Pinky",
       subtitle: "Invite you to celebrate their wedding",
       dateLine: "Wednesday, February 17, 2027",
       locationLine: "Adelaide Hills · The Manor Basket Range",
@@ -114,7 +114,7 @@ export const copy = {
       title: "Dress code",
       code: "Attire",
       hint:
-        "Think refined, breathable fabrics — soft neutrals, midnight blue, or botanical tones, avoid red. Suit jackets appreciated; ties optional.",
+        " ",
       note:
         "Summer evening in the Hills can cool down after sunset — a light wrap is a thoughtful touch.",
     },
@@ -266,9 +266,9 @@ export const copy = {
     },
     dress: {
       title: "着装要求",
-      code: "正装",
+      code: "正装--礼服,西装",
       hint:
-        "质感上乘、透气舒适的面料为佳 — 米色、午夜蓝或柔和的植物色调都很合适,尽量避免红色。建议西装外套；领带可随个人风格。",
+        " ",
       note: "阿德莱德山夏季傍晚日落後可能转凉，建议备一件薄外套。",
     },
     gifts: {

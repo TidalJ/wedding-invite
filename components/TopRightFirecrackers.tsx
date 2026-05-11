@@ -8,13 +8,13 @@ export function TopRightFirecrackers() {
       className="pointer-events-none fixed -right-2 top-14 z-60 select-none sm:-right-3 sm:top-16"
       aria-hidden
     >
-      <div className="relative h-56 w-24 sm:h-72 sm:w-28 lg:h-80 lg:w-32">
+      <div className="relative h-44 w-20 sm:h-56 sm:w-24 lg:h-64 lg:w-28">
         <Image
           src="/decor/firecrackers.png"
           alt=""
           fill
           priority
-          sizes="(max-width: 640px) 96px, (max-width: 1024px) 112px, 128px"
+          sizes="(max-width: 640px) 80px, (max-width: 1024px) 96px, 112px"
           className="object-contain drop-shadow-[0_14px_22px_rgba(0,0,0,0.16)]"
         />
 

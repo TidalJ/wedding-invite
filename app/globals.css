@@ -117,16 +117,6 @@
   }
 }
 
-@keyframes sticker-sway {
-  0%,
-  100% {
-    transform: rotate(-8deg);
-  }
-  50% {
-    transform: rotate(8deg);
-  }
-}
-
 @keyframes cny-burn-progress {
   0% {
     clip-path: inset(75% 0 0 0 round 18px);

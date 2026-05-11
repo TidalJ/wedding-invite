@@ -48,9 +48,6 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
 
   return (
     <>
-      <TopLeftSticker />
-      <TopRightFirecrackers />
-
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div
           className="absolute -left-1/4 top-[-20%] h-[55%] w-[70%] rounded-full opacity-[0.2]"
@@ -123,7 +120,11 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
       </header>
 
       <main id="top">
-        <CinematicHero copy={c.hero} onRsvp={() => setRsvpOpen(true)} />
+        <div className="relative">
+          <TopLeftSticker />
+          <TopRightFirecrackers />
+          <CinematicHero copy={c.hero} onRsvp={() => setRsvpOpen(true)} />
+        </div>
 
         <section
           id="story"

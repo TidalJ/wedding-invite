@@ -5,7 +5,7 @@ import Image from "next/image";
 export function TopRightFirecrackers() {
   return (
     <div
-      className="pointer-events-none fixed -right-2 top-14 z-60 select-none sm:-right-3 sm:top-16"
+      className="pointer-events-none absolute -right-2 top-14 z-60 select-none sm:-right-3 sm:top-16"
       aria-hidden
     >
       <div className="relative h-44 w-20 sm:h-56 sm:w-24 lg:h-64 lg:w-28">

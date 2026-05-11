@@ -117,7 +117,7 @@ export const copy = {
       hint:
         " ",
       note:
-        "Summer evening in the Hills can cool down after sunset — a light wrap is a thoughtful touch.",
+        "Please note that temperatures in the Adelaide Hills may become cooler after sunset, even during summer. Guests are kindly advised to bring a jacket.",
     },
     gifts: {
       title: "Gifts",

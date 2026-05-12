@@ -33,7 +33,7 @@
   }
 
   body {
-    @apply bg-[var(--color-paper)] text-[var(--color-ink)] font-sans;
+    @apply bg-paper text-ink font-sans;
   }
 
   ::selection {

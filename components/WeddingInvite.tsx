@@ -238,6 +238,15 @@ export function WeddingInvite({ inlineRsvpAvailable = false }: Props) {
         <section
           id="schedule"
           className="scroll-mt-24 border-t border-dream px-6 py-24 text-center sm:px-10 sm:py-32"
+          style={{
+            backgroundColor:
+              "color-mix(in srgb, var(--color-dream-lavender) 25%, var(--color-paper))",
+            backgroundImage:
+              "linear-gradient(to bottom, rgba(255,247,251,0.92), rgba(255,247,251,0.92)), url(/bg/programme-bg-v6.png)",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
         >
           <Reveal>
             <ScheduleProgramme

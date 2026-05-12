@@ -5,16 +5,16 @@ import Image from "next/image";
 export function TopRightFirecrackers() {
   return (
     <div
-      className="pointer-events-none absolute -right-2 top-14 z-60 select-none sm:-right-3 sm:top-16"
+      className="pointer-events-none absolute -right-6 top-16 z-60 select-none"
       aria-hidden
     >
-      <div className="relative h-44 w-20 sm:h-56 sm:w-24 lg:h-64 lg:w-28">
+      <div className="relative h-36 w-16 sm:h-44 sm:w-20 lg:h-52 lg:w-24">
         <Image
           src="/decor/firecrackers.png"
           alt=""
           fill
           priority
-          sizes="(max-width: 640px) 80px, (max-width: 1024px) 96px, 112px"
+          sizes="(max-width: 640px) 64px, (max-width: 1024px) 80px, 96px"
           className="object-contain drop-shadow-[0_14px_22px_rgba(0,0,0,0.16)]"
         />
 
